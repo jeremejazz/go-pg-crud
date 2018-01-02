@@ -7,4 +7,4 @@ type Page struct {
 	Description string
 }
 
-var Tmpl = template.Must(template.ParseGlob("../templates/*"))
+var Tmpl = template.Must(template.ParseGlob("templates/*"))
