@@ -6,6 +6,27 @@ import (
 
 func Index(w http.ResponseWriter, r *http.Request) {
 
-	page := &Page{Title: "Home"}
-	Tmpl.ExecuteTemplate(w, "index", page)
+	p := &Page{
+		Title: "Home",
+		Persons: []*Person{
+			&Person{
+				Name:    "Timmy",
+				Address: "22 b",
+			},
+			&Person{
+				Name:    "JJ ABrams",
+				Address: "In a Galaxy Far Far away",
+			},
+		},
+	}
+
+	Tmpl.ExecuteTemplate(w, "index", p)
+}
+
+func HandleList(w http.ResponseWriter, r *http.Request) {
+
+}
+
+func HandleNew(w http.ResponseWriter, r *http.Request) {
+	//
 }

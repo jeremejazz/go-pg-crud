@@ -9,6 +9,7 @@ import (
 func main() {
 	fmt.Println("Starting server :3000")
 	http.HandleFunc("/", lib.Index)
+
 	http.ListenAndServe(":3000", nil)
 
 }

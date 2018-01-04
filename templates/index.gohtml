@@ -2,6 +2,25 @@
     {{ template "header" . }}
 
 
-    {{ .Title }} 
 
+    {{ if .Persons}}
+        <table border="1">
+
+            <tr>
+                <th>Name</th>
+                <th>Address</th>
+                <th>Action</th>
+            </tr>
+            {{ range .Persons}}
+                <tr>
+                    <td>{{ .Name }}</td>
+                    <td>{{ .Address }}</td>
+                    <td>Edit</td>
+                </tr>
+            {{ end }}
+
+        </table>
+    {{ end }}
+
+    {{ template "footer" . }}
 {{ end }}
